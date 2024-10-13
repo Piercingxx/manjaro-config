@@ -7,10 +7,17 @@ if [[ -n "$(command -v nmcli)" && "$(nmcli -t -f STATE g)" != connected ]]; then
 fi
 
 
-yay -S dconf --noconfirm
-yay -S visual-studio-code-bin --noconfirm
-yay -S extension-manager --noconfirm
-yay -S synochat --noconfirm
+sudo pacman -S --needed base-devel
+git clone https://aur.archlinux.org/paru.git
+cd paru
+makepkg -si
+
+
+
+paru -S dconf --noconfirm
+paru -S visual-studio-code-bin --noconfirm
+paru -S extension-manager --noconfirm
+paru -S synochat --noconfirm
 paru -S gimp-devel --noconfirm
 paru -S gnome-shell-extension-app-icons-taskbar --noconfirm
 paru -S gnome-shell-extension-just-perfection-desktop --noconfirm
@@ -32,7 +39,7 @@ gsettings set org.gnome.desktop.interface show-battery-percentage true && echo "
 gsettings set org.gnome.settings-daemon.plugins.power ambient-enabled false && echo "Ambient Enabled: False"
 gsettings set org.gnome.settings-daemon.plugins.power idle-delay "unit32 900" && echo "Idle Delay: 15 minutes"
 gsettings set org.gnome.desktop.interface enable-hot-corners false && echo "Enable Hot Corners: False"
-gsettings set org.gnome.desktop.background picture-options 'spanned' && echo "Background Options: Spanned"
+gsettings set org.gnome.desktop.background picture-options 'spanned'sudo pacman -S python-pipx --noconfirm && echo "Background Options: Spanned"
 gsettings set org.gnome.settings-daemon.plugins.color night-light-enabled true && echo "Night Light Enabled: True"
 gsettings set org.gnome.settings-daemon.plugins.color night-light-schedule-automatic false && echo "Night Light Schedule Automatic: False"
 gsettings set org.gnome.settings-daemon.plugins.color night-light-schedule-from 20 && echo "Night Light Schedule From: 20"
@@ -180,5 +187,3 @@ cd Nordzy-cursors || exit
 ./install.sh
 cd "$builddir" || exit
 rm -rf Nordzy-cursors
-
-
