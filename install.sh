@@ -18,7 +18,7 @@ paru -S dconf --noconfirm
 paru -S visual-studio-code-bin --noconfirm
 paru -S extension-manager --noconfirm
 paru -S synochat --noconfirm
-paru -S gimp-devel --noconfirm
+paru -S gimp-git --noconfirm
 paru -S gnome-shell-extension-app-icons-taskbar --noconfirm
 paru -S gnome-shell-extension-just-perfection-desktop --noconfirm
 paru -S gnome-shell-extension-blur-my-shell --noconfirm
